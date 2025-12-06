@@ -1,31 +1,30 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "app.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "methods": ["GET"],
-      "dest": "public/index.html"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "app.py"
-    },
-    {
-      "src": "/r/(.*)",
-      "dest": "app.py"
-    }
-  ],
-  "env": {
-    "SHORTEN_PASSWORD": "@shorten_password"
-  }
+    "version": 2,
+    "builds": [
+        {
+            "src": "app.py",
+            "use": "@vercel/python"
+        },
+        {
+            "src": "public/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "app.py"
+        },
+        {
+            "src": "/r/(.*)",
+            "dest": "app.py"
+        },
+        {
+            "src": "/(.*)",
+            "methods": [
+                "GET"
+            ],
+            "dest": "public/index.html"
+        }
+    ]
 }
