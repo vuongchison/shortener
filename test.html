@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<script>
+    // full long URL (fragment safe)
+    var target = 'https://play.minizinc.dev/#project={"files":[{"name":"data1.dzn","contents":"H = 16;\nW = 10;\ncells = [|\"P\", \"F\", \"F\", \"F\", \"F\", \"F\", \"F\", \"F\", \"F\", \"F\" |\n          \"P\", \"F\", \"F\", \"F\", \"F\", \"F\", \"R\", \"R\", \"R\", \"R\" |\n          \"P\", \"F\", \"F\", \"P\", \"P\", \"P\", \"H\", \"H\", \"H\", \"H\" |\n          \"P\", \"F\", \"F\", \"P\", \"P\", \"P\", \"H\", \"R\", \"R\", \"R\" |\n          \"P\", \"F\", \"F\", \"P\", \"P\", \"P\", \"H\", \"R\", \"H\", \"H\" |\n          \"P\", \"F\", \"F\", \"H\", \"H\", \"H\", \"H\", \"R\", \"R\", \"H\" |\n          \"P\", \"F\", \"F\", \"R\", \"R\", \"R\", \"R\", \"R\", \"F\", \"F\" |\n          \"P\", \"F\", \"F\", \"R\", \"R\", \"P\", \"P\", \"P\", \"F\", \"F\" |\n          \"P\", \"F\", \"F\", \"R\", \"R\", \"P\", \"P\", \"P\", \"F\", \"F\" |\n          \"P\", \"F\", \"F\", \"R\", \"R\", \"P\", \"P\", \"P\", \"F\", \"F\" |\n          \"P\", \"F\", \"F\", \"R\", \"R\", \"P\", \"P\", \"P\", \"F\", \"F\" |\n          \"P\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"F\", \"F\" |\n          \"P\", \"H\", \"H\", \"R\", \"F\", \"F\", \"F\", \"F\", \"F\", \"F\" |\n          \"P\", \"H\", \"H\", \"R\", \"F\", \"F\", \"F\", \"F\", \"F\", \"F\" |\n          \"P\", \"R\", \"R\", \"R\", \"F\", \"F\", \"F\", \"F\", \"F\", \"F\" |\n          \"P\", \"H\", \"H\", \"F\", \"F\", \"F\", \"F\", \"F\", \"F\", \"F\" |];\nrange = 3;"},{"name":"dop_mission.mzn","contents":"int: H;       % number of rows\nint: W;       % number of columns\narray[1..H,1..W] of string: cells;\nint: range;   % max voice radius\n\narray[1..H, 1..W] of var 0..1: pick;\n\n\n%fill constraints here\n%=====================\n\n\n\nvar int: obj;\n%=====================\n\nsolve minimize obj;\n\noutput [\n  \"(\" ++ show(i) ++ \",\" ++ show(j) ++ \")\\n\"\n  | i in 1..H, j in 1..W where fix(pick[i,j]) == 1\n];\n"}],"tab":1,"solverId":"org.minizinc.gecode_presolver","solverConfig":{"enableTimeLimit":false,"timeLimit":1,"allSolutions":false,"verboseCompilation":false,"verboseSolving":false,"compilerStatistics":false,"solvingStatistics":false,"outputTime":false,"freeSearch":false},"minizincVersion":"latest"}';
+    window.location.replace(target);
+</script>
+</head>
+<body>
+Redirecting…
+</body>
+</html>
